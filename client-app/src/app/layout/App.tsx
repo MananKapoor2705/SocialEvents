@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Header, List } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { Activity } from "../models/activity";
 import NavBar from "./NavBar";
 import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
@@ -12,7 +12,7 @@ function App() {
   const [editMode, setEditMode] = useState(false);
 
   function handleSelectActivity(id: string) {
-    setSelectedActivity(activities.find(x => x.id));
+    setSelectedActivity(activities.find(x => x.id === id));
   }
   function handleCancelSelectActivity() {
     setSelectedActivity(undefined);
